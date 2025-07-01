@@ -11,4 +11,7 @@
     <string name="already_have_account">Already have an account? <a href="#">Log In</a></string>
     <string name="default_web_client_id">793585532801-tofgr4bicha0c8udndg2ihmor4uibfk3.apps.googleusercontent.com</string>
 
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
 </resources>

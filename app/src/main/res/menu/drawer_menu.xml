@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<item android:id="@+id/nav_dashboard"
+    android:title="Dashboard"
+    android:icon="@drawable/outline_apps_24" />
+
+<item android:id="@+id/nav_events"
+    android:title="Events"
+    android:icon="@drawable/event"/>
+
+<item android:id="@+id/nav_settings"
+    android:title="Settings"
+    android:icon="@drawable/settings" />
+
+<item android:id="@+id/nav_help"
+    android:title="Help  Support"
+    android:icon="@drawable/help" />
+</menu>

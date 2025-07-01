@@ -6,4 +6,13 @@
     <color name="background_color">#F5F5F5</color>
     <color name="text_primary">#212121</color>  <!-- Dark gray for text -->
     <color name="text_secondary">#888888</color>  <!-- Gray for secondary text -->
+
+    <color name="primary">#0D47A1</color>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="primaryDark">#0B3C91</color>
+    <color name="background">#F9F9FB</color>
+    <color name="surface">#FFFFFF</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="error">#D32F2F</color>
+    <color name="onError">#FFFFFF</color>
 </resources>

@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Automata</string>
+    <string name="app_logo">Automata App Logo</string>
+
+    <string name="register_title">Create your\nAccount</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="already_have_account">Already have an account? <a href="#">Log In</a></string>
+    <string name="default_web_client_id">793585532801-tofgr4bicha0c8udndg2ihmor4uibfk3.apps.googleusercontent.com</string>
+
+</resources>

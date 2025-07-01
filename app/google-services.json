@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "793585532801",
+    "project_id": "automata-311bb",
+    "storage_bucket": "automata-311bb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:793585532801:android:30c350d6eb8a4b21c93280",
+        "android_client_info": {
+          "package_name": "com.example.automata"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAp_a76xoTsjWt7wzRvFW5FSoeJs6qBR1c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

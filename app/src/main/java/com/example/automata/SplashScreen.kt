@@ -2,11 +2,12 @@ package com.example.automata
 
 import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import com.example.automata.auth.UserSession
 import com.example.automata.databinding.ActivitySplashScreenBinding
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 class SplashScreen : AppCompatActivity() {
     private lateinit var binding: ActivitySplashScreenBinding
@@ -19,20 +20,18 @@ class SplashScreen : AppCompatActivity() {
         // Start animations
         startLogoAnimation()
         startTextAnimation()
-        // Initialize UserSession
+
+        // Initialize session
         UserSession.init(applicationContext)
-        // Delay the redirection logic until animations finish
-        Handler(Looper.getMainLooper()).postDelayed({
-            if (UserSession.isLoggedIn()) {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            } else {
-                val intent = Intent(this, LoginActivity::class.java)
-                startActivity(intent)
-            }
+
+        // Delay and navigate after 3 seconds
+        lifecycleScope.launch {
+            delay(3000)
+            val targetActivity = if (UserSession.isLoggedIn()) MainActivity::class.java else LoginActivity::class.java
+            startActivity(Intent(this@SplashScreen, targetActivity))
             overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
             finish()
-        }, 3000)
+        }
     }
 
     private fun startLogoAnimation() {
@@ -50,50 +49,9 @@ class SplashScreen : AppCompatActivity() {
     }
 
     private fun startTextAnimation() {
-        binding.appName.apply {
-            alpha = 0f
-            translationY = 50f
-            animate()
-                .alpha(1f)
-                .translationY(0f)
-                .setStartDelay(500)
-                .setDuration(800)
-                .start()
-        }
-
-        binding.tagline.apply {
-            alpha = 0f
-            translationY = 30f
-            animate()
-                .alpha(1f)
-                .translationY(0f)
-                .setStartDelay(700)
-                .setDuration(600)
-                .start()
-        }
-
-        binding.loadingIndicator.apply {
-            alpha = 0f
-            animate()
-                .alpha(1f)
-                .setStartDelay(1000)
-                .setDuration(500)
-                .start()
-        }
-
-        binding.footer.apply {
-            alpha = 0f
-            animate()
-                .alpha(1f)
-                .setStartDelay(1500)
-                .setDuration(500)
-                .start()
-        }
-    }
-
-    private fun navigateToMain() {
-        startActivity(Intent(this, MainActivity::class.java))
-        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out)
-        finish()
+        binding.appName.animate().alpha(1f).translationY(0f).setStartDelay(500).setDuration(800).start()
+        binding.tagline.animate().alpha(1f).translationY(0f).setStartDelay(700).setDuration(600).start()
+        binding.loadingIndicator.animate().alpha(1f).setStartDelay(1000).setDuration(500).start()
+        binding.footer.animate().alpha(1f).setStartDelay(1500).setDuration(500).start()
     }
 }

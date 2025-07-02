@@ -14,7 +14,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!-- Modern Top App Bar -->
+        <!-- Top App Bar -->
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
@@ -71,7 +71,7 @@
                     </LinearLayout>
                 </com.google.android.material.card.MaterialCardView>
 
-                <!-- Chat Box -->
+                <!-- Chat Input Box -->
                 <include layout="@layout/view_chat_box" />
 
                 <!-- Logout Button -->
@@ -88,7 +88,7 @@
         </androidx.core.widget.NestedScrollView>
     </LinearLayout>
 
-    <!-- Navigation Drawer -->
+    <!-- Left Navigation Drawer -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view"
         android:layout_width="280dp"
@@ -98,4 +98,68 @@
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/drawer_menu"
         app:itemShapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Small" />
+
+    <!-- Right Chat Drawer -->
+    <LinearLayout
+        android:id="@+id/chat_drawer"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/chat_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Conversation"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:paddingBottom="8dp" />
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1">
+
+            <LinearLayout
+                android:id="@+id/chat_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
+        <!-- Chat Input Bar -->
+        <LinearLayout
+            android:id="@+id/chatBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp">
+
+            <EditText
+                android:id="@+id/chatInput"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Ask AutoMata AI..."
+                android:textColor="#000000"
+                android:textColorHint="#888888"
+                android:background="@drawable/chat_input_background"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:inputType="text" />
+
+            <ImageButton
+                android:id="@+id/sendButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_send"
+                android:contentDescription="Send" />
+        </LinearLayout>
+    </LinearLayout>
+
 </androidx.drawerlayout.widget.DrawerLayout>

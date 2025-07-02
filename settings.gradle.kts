@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Automata"
 include(":app")
- 
+include(":llama")
